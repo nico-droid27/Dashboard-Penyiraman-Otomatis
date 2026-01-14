@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
   const mqttStatus = document.getElementById("mqttStatus");
 
   const client = mqtt.connect(
-    "wss://8198b2045a7c4fc3a7da56a339fbdc85.s1.eu.hivemq.cloud:8884",
+    "wss://8198b2045a7c4fc3a7da56a339fbdc85.s1.eu.hivemq.cloud:8884/mqtt",
     {
       username: "esp32",
       password: "Project18166*",
@@ -63,3 +63,4 @@ window.addEventListener("load", () => {
     client.publish("irrigation/cmd/threshold", threshold.value);
   };
 });
+
