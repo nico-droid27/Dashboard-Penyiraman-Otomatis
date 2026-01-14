@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Irrigation MQTT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- MQTT.js versi STABIL -->
+  <script src="https://unpkg.com/mqtt@4.3.7/dist/mqtt.min.js"></script>
+</head>
+<body>
+
+<h1>🌱 Smart Irrigation Dashboard</h1>
+
+<div class="status-bar">
+  MQTT Status:
+  <span id="mqttStatus" class="offline">DISCONNECTED</span>
+</div>
+
+<div class="card">
+  <h2>Kelembaban Tanah</h2>
+  <div class="value"><span id="soil">--</span>%</div>
+</div>
+
+<div class="card">
+  <h2>Monitoring Daya</h2>
+  <p>Tegangan: <b><span id="volt">--</span> V</b></p>
+  <p>Arus: <b><span id="current">--</span> mA</b></p>
+  <p>Daya: <b><span id="power">--</span> W</b></p>
+</div>
+
+<div class="card">
+  <h2>Set Point Kelembaban</h2>
+  <input type="number" id="threshold" min="0" max="100">
+  <button class="btn set" onclick="setThreshold()">Update</button>
+</div>
+
+<div class="card">
+  <h2>Status Sistem</h2>
+  <p>Mode: <b id="mode">--</b></p>
+  <p>Pompa: <b id="pump">--</b></p>
+
+  <button class="btn mode" onclick="toggleMode()">Ganti Mode</button>
+  <button class="btn on" onclick="pumpOn()">Pompa ON</button>
+  <button class="btn off" onclick="pumpOff()">Pompa OFF</button>
+</div>
+
+<!-- JS HARUS DI AKHIR -->
+<script src="script.js"></script>
+</body>
+</html>
